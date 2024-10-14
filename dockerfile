@@ -1,17 +1,15 @@
-# Usar a imagem oficial do Node.js como base
+bashCopy code
+# Use the official Node.js image as the base image
 FROM node:18
 
-# Definir o diretório de trabalho no contêiner
+# Set the working directory in the container
 WORKDIR /app
 
-# Copiar os arquivos da aplicação para o diretório de trabalho
+# Copy the application files into the working directory
 COPY . /app
 
-# Instalar as dependências da aplicação
+# Install the application dependencies
 RUN npm install
 
-# Expor a porta se o bot estiver ouvindo em uma porta específica (opcional)
-# EXPOSE 3000
-
-# Definir o comando de entrada para o contêiner
-CMD ["node", "bot.js"]
+# Define the entry point for the container
+CMD ["npm", "start"]
